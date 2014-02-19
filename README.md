@@ -11,20 +11,20 @@ Les exercices seront corrigés à l'oral et vous aurez une version d'une solutio
 
 ## Selenium
 ### Action Basiques 
-        Exercice1.java
-          Aller sur une page, cliquer sur le bouton avec l'id "myId"
-          Aller sur une page, cliquer sur le bouton dont le commentaire commence par <-- exercice1 --> dans le code html
-        Exercice2.java       
-          Remplir le login avec "Luke" et le mot de passe "Skywalker". Valider le formulaire.
-        Exercice3.java       
-          Ajouter le code pour que la page précédente soit affichée.
-        Exercice4.java
-          Vérifier que le cookie "deathstar" est bien présent.
-        Exercice5.java
-          Lorsque la fenetre d'alerte apparait, cliquez sur "Annuler" pour faire passer le test.
-        Exercice6.java
-          Modifier via javascript la valeur du champ avec l'id "help" pour que le test passe.
-          
+####Exercice1.java
+Aller sur une page, cliquer sur le bouton avec l'id "myId"
+Aller sur une page, cliquer sur le bouton dont le commentaire commence par <-- exercice1 --> dans le code html
+####Exercice2.java       
+Remplir le login avec "Luke" et le mot de passe "Skywalker". Valider le formulaire.
+####Exercice3.java       
+Ajouter le code pour que la page précédente soit affichée.
+####Exercice4.java
+Vérifier que le cookie "deathstar" est bien présent.
+####Exercice5.java
+Lorsque la fenetre d'alerte apparait, cliquez sur "Annuler" pour faire passer le test.
+Exercice6.java
+Modifier via javascript la valeur du champ avec l'id "help" pour que le test passe.
+
           
 Drivers - Prez 10 min (correction + prez driver) 15 min
 Utiliser htmldriver
