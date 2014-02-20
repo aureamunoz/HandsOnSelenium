@@ -1,27 +1,38 @@
 // JavaScript Document
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
+
+    $('#bigbutton').click(function () {
+        var isConfirmed = confirm("do you want to change the text ?")
+        if (isConfirmed == true) {
+            $('#bigbutton').text("changed !")
+        } else {
+            $('#bigbutton').text("Not changed !")
+
+        }
+        return false;
+    });
 
     // Slider plugin
 
     $(".rslides1").responsiveSlides({
         //auto: false,
         //nav: true,
-		pause: true,
+        pause: true,
         pager: true,
         speed: 300
         //maxwidth: 540
     });
-	
-	// Carousel plugin
-	
-	$('.testimonialswrap').carousel({
-				slider: '#testimonials',
-				slide: '.testimonials-slide',
-				nextSlide : '.next-l',
-				prevSlide : '.prev-l',
-				addNav : false
-			});
+
+    // Carousel plugin
+
+    $('.testimonialswrap').carousel({
+        slider: '#testimonials',
+        slide: '.testimonials-slide',
+        nextSlide: '.next-l',
+        prevSlide: '.prev-l',
+        addNav: false
+    });
 
     // Top Text widget cycle 								
 
@@ -33,83 +44,83 @@ jQuery(document).ready(function($) {
         cleartypeNoBg: true
     });
 
-    setTimeout(function() {
+    setTimeout(function () {
 
-        $('.top-bar').slideDown();
+            $('.top-bar').slideDown();
 
-        //Social icon hover
+            //Social icon hover
 
-        $('ul.socicon li').fadeTo(300, 0.5);
-        var width = 0;
-        var sWidth = width += $('ul.top-w li').outerWidth(true);
-        var n = $('ul.top-w li').length;
+            $('ul.socicon li').fadeTo(300, 0.5);
+            var width = 0;
+            var sWidth = width += $('ul.top-w li').outerWidth(true);
+            var n = $('ul.top-w li').length;
 
-        $('ul.top-w li').hover(function() {
-            $(this).fadeTo(300, 0.8);
+            $('ul.top-w li').hover(function () {
+                    $(this).fadeTo(300, 0.8);
+
+                },
+                function () {
+                    $(this).fadeTo(300, 0.5);
+
+                });
+
+            $('ul.top-w').hover(function () {
+                    $('ul.top-w').stop().animate({
+                            width: sWidth * n
+                        },
+                        {
+                            duration: 500,
+                            specialEasing: {
+                                width: 'swing'
+                            }
+                        });
+
+                },
+                function () {
+                    $('ul.top-w').stop().animate({
+                            width: '30px'
+                        },
+                        {
+                            duration: 500,
+                            specialEasing: {
+                                width: 'swing'
+                            }
+                        });
+
+                });
 
         },
-        function() {
-            $(this).fadeTo(300, 0.5);
-
-        });
-
-        $('ul.top-w').hover(function() {
-            $('ul.top-w').stop().animate({
-                width: sWidth * n
-            },
-            {
-                duration: 500,
-                specialEasing: {
-                    width: 'swing'
-                }
-            });
-
-        },
-        function() {
-            $('ul.top-w').stop().animate({
-                width: '30px'
-            },
-            {
-                duration: 500,
-                specialEasing: {
-                    width: 'swing'
-                }
-            });
-
-        });
-
-    },
-    1000);
+        1000);
 
     //Google map setting
 
-    $('#google_map').gmap3({
-        action: 'addMarker',
-        address: "Pearl St, NY",
-        map: {
-            center: true,
-            zoom: 10
-        },
-        marker: {
-            options: {
-                draggable: false
-            }
-        },
-        infowindow: {
-            options: {
-                // content: 'Hello World !<br>Phone: +1 111 111-11-11<br>Address: Chicago, IL, 111 Webdev St'
-            },
-            events: {
-                closeclick: function() {
-
-}
-            }
-        }
-    });
+//    $('#google_map').gmap3({
+//        action: 'addMarker',
+//        address: "Pearl St, NY",
+//        map: {
+//            center: true,
+//            zoom: 10
+//        },
+//        marker: {
+//            options: {
+//                draggable: false
+//            }
+//        },
+//        infowindow: {
+//            options: {
+//                // content: 'Hello World !<br>Phone: +1 111 111-11-11<br>Address: Chicago, IL, 111 Webdev St'
+//            },
+//            events: {
+//                closeclick: function() {
+//
+//}
+//            }
+//        }
+//    });
 
     //Portfolio filter
 
-    $('ul#portfolio-filter a').click(function() {
+    $('ul#portfolio-filter a').click(function () {
 
         $('ul#portfolio-filter a.currents').removeClass('currents');
         $(this).addClass('currents');
@@ -120,7 +131,7 @@ jQuery(document).ready(function($) {
             $('#containment-portfolio li.hidden').show(1000).removeClass('hidden');
         } else {
 
-            $('#containment-portfolio li').each(function() {
+            $('#containment-portfolio li').each(function () {
                 if (!$(this).hasClass(filterVal)) {
                     $(this).hide(1000).addClass('hidden');
 
@@ -155,57 +166,57 @@ jQuery(document).ready(function($) {
 
     //Portfolio item
 
-    $('.item-block').hover(function() {
-        $(this).css({
-            background: '#f8f8f8'
-        });
-        $(this).find('.zoom').animate({
-            left: "+=130px"
-        },
-        {
-            duration: 300,
-            specialEasing: {
-                width: 'easeOutExpo'
-            }
-        });
+    $('.item-block').hover(function () {
+            $(this).css({
+                background: '#f8f8f8'
+            });
+            $(this).find('.zoom').animate({
+                    left: "+=130px"
+                },
+                {
+                    duration: 300,
+                    specialEasing: {
+                        width: 'easeOutExpo'
+                    }
+                });
 
-        $(this).find('.link').animate({
-            right: "+=130px"
-        },
-        {
-            duration: 300,
-            specialEasing: {
-                width: 'easeOutExpo'
-            }
-        });
+            $(this).find('.link').animate({
+                    right: "+=130px"
+                },
+                {
+                    duration: 300,
+                    specialEasing: {
+                        width: 'easeOutExpo'
+                    }
+                });
 
-    },
-    function() {
-        $(this).css({
-            background: 'none'
-        });
-        $(this).find('.zoom').animate({
-            left: "-70px"
         },
-        {
-            duration: 300,
-            specialEasing: {
-                width: 'easeOutExpo'
-            }
-        });
+        function () {
+            $(this).css({
+                background: 'none'
+            });
+            $(this).find('.zoom').animate({
+                    left: "-70px"
+                },
+                {
+                    duration: 300,
+                    specialEasing: {
+                        width: 'easeOutExpo'
+                    }
+                });
 
-        $(this).find('.link').animate({
-            right: "-70px"
-        },
-        {
-            duration: 300,
-            specialEasing: {
-                width: 'easeOutExpo'
-            }
-        });
+            $(this).find('.link').animate({
+                    right: "-70px"
+                },
+                {
+                    duration: 300,
+                    specialEasing: {
+                        width: 'easeOutExpo'
+                    }
+                });
 
-        return false;
-    });
+            return false;
+        });
 
     //Tweets setting
 
@@ -213,6 +224,7 @@ jQuery(document).ready(function($) {
         var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
         return text.replace(exp, "<a href='$1'>$1</a>");
     }
+
     function relTime(time_value) {
         time_value = time_value.replace(/(\+[0-9]{4}\s)/ig, "");
         var parsed_date = Date.parse(time_value);
@@ -232,49 +244,49 @@ jQuery(document).ready(function($) {
     var count = '3'; // How many feeds do you want. Recommended Max 10 Twitter Api
 
     $.getJSON('http://twitter.com/statuses/user_timeline.json?screen_name=' + user + '&count=' + count + '&callback=?',
-    function(tweetdata) {
-        var tl = $("#tweet-list");
-        $.each(tweetdata,
-        function(i, tweet) {
-            tl.append("<li>&ldquo;" + urlToLink(tweet.text) + "&rdquo;&ndash; " + relTime(tweet.created_at) + "</li>");
+        function (tweetdata) {
+            var tl = $("#tweet-list");
+            $.each(tweetdata,
+                function (i, tweet) {
+                    tl.append("<li>&ldquo;" + urlToLink(tweet.text) + "&rdquo;&ndash; " + relTime(tweet.created_at) + "</li>");
+                });
         });
-    });
 
-    setTimeout(function() {
-        $('.tweets p').hide();
-        $('#tweet-list').show();
+    setTimeout(function () {
+            $('.tweets p').hide();
+            $('#tweet-list').show();
 
-    },
-    1000);
+        },
+        1000);
 
     // Search effect 
-	
-    $('.navbar-search').hover(function() {
-        $('.search-query').stop().animate({
-            width: '150px'
+
+    $('.navbar-search').hover(function () {
+            $('.search-query').stop().animate({
+                    width: '150px'
+                },
+                {
+                    duration: 500,
+                    specialEasing: {
+                        width: 'swing'
+                    }
+                });
+
         },
-        {
-            duration: 500,
-            specialEasing: {
-                width: 'swing'
-            }
+        function () {
+            $('.search-query').stop().animate({
+                    width: '8px'
+                },
+                {
+                    duration: 500,
+                    specialEasing: {
+                        width: 'swing'
+                    }
+                });
+
         });
 
-    },
-    function() {
-        $('.search-query').stop().animate({
-            width: '8px'
-        },
-        {
-            duration: 500,
-            specialEasing: {
-                width: 'swing'
-            }
-        });
-
-    });
-
-    $("#header input#searchsubmit").mouseover(function() {
+    $("#header input#searchsubmit").mouseover(function () {
         $('#header #search form input#s').stop(false, true).animate({
             width: '152px',
             marginRight: '-6px',
@@ -282,7 +294,7 @@ jQuery(document).ready(function($) {
             paddingRight: '10px'
         }).focus();
     });
-    $("#header #search").mouseleave(function() {
+    $("#header #search").mouseleave(function () {
         value = '';
         $('#header #search form input#s').stop(false, true).animate({
             width: '3px',
@@ -290,57 +302,57 @@ jQuery(document).ready(function($) {
             padding: '0'
         }).blur().val(value);
     });
-	
-	//Toggle
+
+    //Toggle
 
     $(".toggle-box").hide();
-    $(".open-block").toggle(function() {
-        $(this).addClass("active");
-    },
-    function() {
-        $(this).removeClass("active");
-    });
-    $(".open-block").click(function() {
+    $(".open-block").toggle(function () {
+            $(this).addClass("active");
+        },
+        function () {
+            $(this).removeClass("active");
+        });
+    $(".open-block").click(function () {
         $(this).next(".toggle-box").slideToggle();
     });
-	
+
     //Accordion
 
     $('.accordion-box').hide();
-    $('.open-block-acc').click(function() {
-        $(".open-block-acc").removeClass("active"); 
-		$('.accordion-box').slideUp('normal');
+    $('.open-block-acc').click(function () {
+        $(".open-block-acc").removeClass("active");
+        $('.accordion-box').slideUp('normal');
         if ($(this).next().is(':hidden') == true) {
             $(this).next().slideDown('normal');
             $(this).addClass("active");
         }
     });
-	
-	//Message box
 
-    $('.message-box').find('.closemsg').click(function() {
+    //Message box
+
+    $('.message-box').find('.closemsg').click(function () {
         $(this).parent('.message-box').slideUp(500);
     });
 
     // Mobi Navigation
 
-    $("nav ul").find('li').hover(function() {
-        $(this).children("ul").stop(true, true).fadeIn(300);
-    },
-    function() {
-        $(this).children("ul").stop(true, true).fadeOut(200);
-    });
+    $("nav ul").find('li').hover(function () {
+            $(this).children("ul").stop(true, true).fadeIn(300);
+        },
+        function () {
+            $(this).children("ul").stop(true, true).fadeOut(200);
+        });
 
-    (function() {
+    (function () {
 
         var $navResp = $('nav').children('ul'),
-        optionsList = '<option value="" selected>MENU</option>';
+            optionsList = '<option value="" selected>MENU</option>';
 
-        $navResp.find('li').each(function() {
+        $navResp.find('li').each(function () {
             var $this = $(this),
-            $anchor = $this.children('a'),
-            depth = $this.parents('ul').length - 1,
-            indent = '';
+                $anchor = $this.children('a'),
+                depth = $this.parents('ul').length - 1,
+                indent = '';
 
             if (depth) {
                 while (depth > 0) {
@@ -353,10 +365,10 @@ jQuery(document).ready(function($) {
         }).end().after('<select class="responsive">' + optionsList + '</select>');
 
         $('.responsive').on('change',
-        function() {
-            window.location = $(this).find("option:selected").val();
+            function () {
+                window.location = $(this).find("option:selected").val();
 
-        });
+            });
 
     })();
 
@@ -366,38 +378,38 @@ jQuery(document).ready(function($) {
         scope: '#form'
     });
 
-    $('#submit').click(function() {
+    $('#submit').click(function () {
         $('input.error-input, textarea.error-input').delay(300).animate({
-            marginLeft: 0
-        },
-        100).animate({
-            marginLeft: 10
-        },
-        100).animate({
-            marginLeft: 0
-        },
-        100).animate({
-            marginLeft: 10
-        },
-        100).animate({
-            marginLeft: 0
-        },
-        100);
+                marginLeft: 0
+            },
+            100).animate({
+                marginLeft: 10
+            },
+            100).animate({
+                marginLeft: 0
+            },
+            100).animate({
+                marginLeft: 10
+            },
+            100).animate({
+                marginLeft: 0
+            },
+            100);
     });
 
     // Form plugin
 
     var options = {
 
-        beforeSubmit: function() {
+        beforeSubmit: function () {
             $('.sending').show();
 
         },
-        success: function() {
+        success: function () {
             $('.sending').hide();
             $('#form').hide();
             $(".mess").show().html('<h3>Thanks !</h3><h3>Your message has been sent.</h3>'); // Change Your message post send
-            $('.mess').delay(3500).fadeOut(function() {
+            $('.mess').delay(3500).fadeOut(function () {
 
                 $('#form').clearForm();
                 $('#form').delay(4000).show();
@@ -406,9 +418,10 @@ jQuery(document).ready(function($) {
         }
     };
 
-    $('#form').submit(function() {
+    $('#form').submit(function () {
         $(this).ajaxSubmit(options);
         return false;
     });
+
 
 });
