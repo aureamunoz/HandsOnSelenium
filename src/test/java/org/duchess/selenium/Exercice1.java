@@ -31,7 +31,7 @@ public class Exercice1
         WebDriver driver = new FirefoxDriver();
         driver.get(Util.getHome());
         driver.findElement(By.linkText("Blog")).click();
-        assertThat(driver.getTitle()).isEqualTo("About");
+        assertThat(driver.getTitle()).isEqualTo("Blog");
         driver.quit();
     }
 }

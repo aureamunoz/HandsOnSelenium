@@ -2,9 +2,8 @@ package org.duchess.selenium;
 
 
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import java.io.IOException;
 
@@ -19,15 +18,11 @@ public class Exercice0
 {
     @Test
     public void when_go_to_index_then_index_is_on_screen() throws IOException {
-        WebDriver driver = null;
-        //init driver
-
-        //go to page
+        WebDriver driver = new HtmlUnitDriver();
         String pageUrl = Util.getHome();
-
+        driver.get(pageUrl);
         assertThat(driver.getTitle()).isEqualTo("Home");
-
-        //Close ff
+        driver.quit();
 
 
     }
