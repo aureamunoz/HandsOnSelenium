@@ -1,8 +1,8 @@
-package org.duchess.selenium;
+package org.duchess.selenium.part1;
 
 
+import org.duchess.selenium.Util;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -21,7 +21,9 @@ public class Exercice1
     public void when_clicking_to_link_about_then_page_is_about() throws IOException {
         WebDriver driver = new FirefoxDriver();
         driver.get(Util.getHome());
-        driver.findElement(By.id("about")).click();
+
+        // ADD CODE HERE
+
         assertThat(driver.getTitle()).isEqualTo("About");
         driver.quit();
     }
@@ -30,7 +32,9 @@ public class Exercice1
     public void when_clicking_to_link_blog_then_page_blog() throws IOException {
         WebDriver driver = new FirefoxDriver();
         driver.get(Util.getHome());
-        driver.findElement(By.linkText("Blog")).click();
+
+        // ADD CODE HERE
+
         assertThat(driver.getTitle()).isEqualTo("About");
         driver.quit();
     }

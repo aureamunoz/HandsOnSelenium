@@ -1,5 +1,6 @@
-package org.duchess.selenium;
+package org.duchess.selenium.part1;
 
+import org.duchess.selenium.Util;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,7 +27,8 @@ public class Exercice3
 
     @Test
     public void when_page_feature_then_cookie_luke_is_equal_to_skywalker() {
-        String cookieValue = driver.manage().getCookieNamed("luke").getValue();
+        String cookieValue = null ; // ADD CODE HERE
+
         assertThat(cookieValue).isEqualTo("skywalker");
     }
 

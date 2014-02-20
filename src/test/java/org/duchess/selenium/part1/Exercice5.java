@@ -1,10 +1,9 @@
-package org.duchess.selenium;
+package org.duchess.selenium.part1;
 
+import org.duchess.selenium.Util;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -29,11 +28,11 @@ public class Exercice5
     public void when_going_back_then_page_is_feature() {
         driver.get(Util.getFeatures());
         driver.get(Util.getHome());
-                    driver.navigate().back();
+
+        //ADD CODE HERE
+
         assertThat(driver.getTitle()).isEqualTo("Features");
     }
-
-
 
 
     @After

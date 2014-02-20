@@ -1,10 +1,9 @@
-package org.duchess.selenium;
+package org.duchess.selenium.part1;
 
 
+import org.duchess.selenium.Util;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.IOException;
 
@@ -22,12 +21,13 @@ public class Exercice0
         WebDriver driver = null;
         //init driver
 
-        //go to page
-        String pageUrl = Util.getHome();
+         String pageUrl = Util.getHome();
+        //go to page -   Util.getHome() return the url path for this handson
+
 
         assertThat(driver.getTitle()).isEqualTo("Home");
 
-        //Close ff
+        //Close the driver
 
 
     }

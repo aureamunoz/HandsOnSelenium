@@ -1,5 +1,6 @@
-package org.duchess.selenium;
+package org.duchess.selenium.part1;
 
+import org.duchess.selenium.Util;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,13 +30,7 @@ public class Exercice2
 
     @Test
     public void when_fill_contact_form_then_form_submit() throws IOException {
-        driver.findElement(By.name("fname")).sendKeys("Mathilde");
-        driver.findElement(By.name("lname")).sendKeys("Leme");
-        driver.findElement(By.name("phone")).sendKeys("01");
-        driver.findElement(By.name("email")).sendKeys("test@test.com");
-        driver.findElement(By.name("message")).sendKeys("tems");
-
-        driver.findElement(By.id("form")).submit();
+        // ADD CODE HERE
 
         assertThat(driver.findElement(By.cssSelector(".mess")).getText()).contains("Thanks");
 
