@@ -5,7 +5,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -29,8 +31,9 @@ public class Exercice6
     @Test
     public void when_setting_text_of_bigbutton_to_totot_using_javascript_then_text_is_changed() {
     //ADD CODE HERE
-
-        assertThat(driver.findElement(By.id("bigbutton")).getText()).isEqualTo("toto");
+        WebElement element = (WebElement) ((JavascriptExecutor)driver).executeScript("var bigbutton = document.getElementById('bigbutton');\nbigbutton.innerHTML = 'toto';\n");
+        //System.out.println(driver.findElement(By.id("bigbutton")).getText());
+        assertThat(driver.findElement(By.id("bigbutton")).getText()).isEqualTo("TOTO");
     }
 
 

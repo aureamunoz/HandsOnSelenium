@@ -28,6 +28,7 @@ public class Exercice5
     public void when_going_back_then_page_is_feature() {
         driver.get(Util.getFeatures());
         driver.get(Util.getHome());
+        driver.navigate().back();
 
         //ADD CODE HERE
 
