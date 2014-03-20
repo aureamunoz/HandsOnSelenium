@@ -26,12 +26,12 @@ public class Exercice1 {
     }
 
     @Test
-      public void when_click_to_next_then_new_datas_with_implicit_wait() throws InterruptedException {
-          assertThat(driver.findElements(By.cssSelector("#containment-portfolio")).size()).isEqualTo(1);
-          driver.findElement(By.ByLinkText.linkText("WEB")).click();
+    public void when_click_to_next_then_new_datas_with_implicit_wait() throws InterruptedException {
+        assertThat(driver.findElements(By.cssSelector("#containment-portfolio")).size()).isEqualTo(1);
+        driver.findElement(By.ByLinkText.linkText("WEB")).click();
 
-          assertThat(driver.findElements(By.cssSelector(".audio.hidden")).size()).isEqualTo(1);
-      }
+        assertThat(driver.findElements(By.cssSelector(".audio.hidden")).size()).isEqualTo(1);
+    }
 
     @Test
     //Appelez nous quand vous voyez le probleme
@@ -43,14 +43,22 @@ public class Exercice1 {
     }
 
 
-
-    @Test
+    @Test //utiliser expectedConditions
     public void when_click_to_next_then_new_datas_with_explicit_wait() throws InterruptedException {
         assertThat(driver.findElements(By.cssSelector("#containment-portfolio")).size()).isEqualTo(1);
         driver.findElement(By.ByLinkText.linkText("WEB")).click();
 
         assertThat(driver.findElements(By.cssSelector("#containment-portfolio li:not(.hidden)")).size()).isEqualTo(4);
     }
+
+    @Test //créer votre propre expectedCondition
+    public void when_click_to_next_then_new_datas_with_explicit_wait_2() throws InterruptedException {
+        assertThat(driver.findElements(By.cssSelector("#containment-portfolio")).size()).isEqualTo(1);
+        driver.findElement(By.ByLinkText.linkText("WEB")).click();
+
+        assertThat(driver.findElements(By.cssSelector("#containment-portfolio li:not(.hidden)")).size()).isEqualTo(4);
+    }
+
 
     @After
     public void afterTest() {

@@ -29,12 +29,6 @@ public class Exercice0 {
     }
 
     @Test
-    public void when_trying_htmldriver_then_html_driver_is_used() throws IOException {
-        WebDriver driver = null;
-        driver.close();
-    }
-
-    @Test
     /**
      *    If you have chrome
      */
@@ -42,4 +36,12 @@ public class Exercice0 {
         WebDriver driver = null;
         driver.close();
     }
+
+    @Test
+    public void when_trying_htmldriver_then_html_driver_is_used() throws IOException {
+        WebDriver driver = null;
+        driver.close();
+    }
+
+
 }
