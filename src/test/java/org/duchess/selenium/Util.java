@@ -15,8 +15,16 @@ public class Util {
     public final static String getContact(){
         return Util.getPath() + "contact.html";
     }
+
+    public final static String getPortfolio(){
+        return Util.getPath() + "portfolio.html";
+    }
+
     public final static String getFeatures(){
         return Util.getPath() + "features.html";
     }
 
+    public static String getPortfolio2() {
+        return Util.getPath() + "portfolio-two.html";
+    }
 }

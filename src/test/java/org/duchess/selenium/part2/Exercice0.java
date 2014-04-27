@@ -71,4 +71,6 @@ public class Exercice0 {
         //Close the driver
         driver.quit();
     }
+
+
 }
