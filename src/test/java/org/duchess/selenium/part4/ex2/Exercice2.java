@@ -4,11 +4,9 @@ import org.duchess.selenium.Util;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.PageFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -27,20 +25,15 @@ public class Exercice2 {
     public void beforeTest() {
         driver = new FirefoxDriver();
         driver.get(Util.getPortfolio2());
+        portofolioPage = PageFactory.initElements(driver, PortofolioPage.class);
     }
 
     @Test
     public void when_click_to_next_then_new_datas_with_implicit_wait() {
-        assertThat(driver.findElements(By.cssSelector("#containment-portfolio")).size()).isEqualTo(1);
-        driver.findElement(By.ByLinkText.linkText("WEB")).click();
-        (new WebDriverWait(driver, 10))
-                        .until(new ExpectedCondition<Boolean>() {
-                            @Override
-                            public Boolean apply(WebDriver driver) {
-                                return driver.findElements(By.cssSelector("#containment-portfolio li:not(.hidden)")).size() == 4;
-                            }
-                 });
-        assertThat(driver.findElements(By.cssSelector("#containment-portfolio li:not(.hidden)")).size()).isEqualTo(4);
+        assertThat(portofolioPage.getContainers().size()).isEqualTo(1);
+        portofolioPage.clickWebLink();
+        portofolioPage.waitForElements(driver);
+        assertThat(portofolioPage.getImages().size()).isEqualTo(4);
     }
 
 

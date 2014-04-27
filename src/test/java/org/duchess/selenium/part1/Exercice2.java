@@ -54,10 +54,7 @@ public class Exercice2
         //driver.findElement(By.id("message")).sendKeys("lbkjalñkdjflaskdjflksjd");
         driver.findElement(By.id("submit")).click();
 
-        String rgb[] = driver.findElement(By.name("email")).getCssValue("border-bottom-color").replaceAll("(rgba)|(rgb)|(\\()|(\\s)|(\\))","").split(",");
-        String hex = String.format("#%s%s%s", toBrowserHexValue(Integer.parseInt(rgb[0])), toBrowserHexValue(Integer.parseInt(rgb[1])), toBrowserHexValue(Integer.parseInt(rgb[2])));
-
-        assertThat(hex).isEqualTo("#2293A7");
+        assertThat(driver.findElement(By.className("error-input"))).isNotNull();
 
     }
 
